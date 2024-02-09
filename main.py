@@ -3,11 +3,13 @@ import pandas as zx
 
 
 web = Flask(__name__)
+stations = zx.read_csv("data_small/stations.txt", skiprows=17)
+stations = stations[["STAID", "STANAME                                 "]]
 
 
 @web.route("/")
 def home():
-    return render_template("home.html")
+    return render_template("home.html", data=stations.to_html())
 
 
 @web.route("/ap1/ver1/<stn>/<date>")
