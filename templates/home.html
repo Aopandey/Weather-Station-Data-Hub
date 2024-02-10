@@ -3,13 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
 <h1>Welcome to my Home Page</h1>
-<p>URL format: http://127.0.0.1:5000/ap1/ver1/stn/date</p>
-<p>To access a single station for a single date: http://127.0.0.1:5000/ap1/ver1/8/1973-10-28</p>
-<p>To access a single station for all dates: http://127.0.0.1:5000/ap1/ver1/8</p>
-<p>To access a single station for one year: http://127.0.0.1:5000/ap1/ver1/year/8/1973</p>
+<p>URL format: <a href="http://127.0.0.1:5000/ap1/ver1/stn/date">http://127.0.0.1:5000/ap1/ver1/stn/date</a></p>
+<p>To access a single station for a single date: <a href="http://127.0.0.1:5000/ap1/ver1/8/1973-10-28">http://127.0.0.1:5000/ap1/ver1/8/1973-10-28</a></p>
+<p>To access a single station for all dates: <a href="http://127.0.0.1:5000/ap1/ver1/8">http://127.0.0.1:5000/ap1/ver1/8</a></p>
+<p>To access a single station for one year: <a href="http://127.0.0.1:5000/ap1/ver1/year/8/1973">http://127.0.0.1:5000/ap1/ver1/year/8/1973</a></p>
 <p>{{data|safe}}</p>
 </body>
 </html>
