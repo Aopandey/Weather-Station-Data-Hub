@@ -22,6 +22,21 @@ def about(stn, date):
             "Temperature": temp}
 
 
+@web.route("/ap1/ver1/<stn>")
+def all_data(stn):
+    data = zx.read_csv("data_small/TG_STAID" + str(stn).zfill(6) + ".txt", skiprows=20,
+                       parse_dates=["    DATE"])
+    result = data.to_dict(orient="records")
+    return result
+
+
+@web.route("/ap1/ver1/year/<stn>/<year>")
+def date_data(stn, year):
+    data = zx.read_csv("data_small/TG_STAID" + str(stn).zfill(6) + ".txt", skiprows=20)
+    data["    DATE"] = data["    DATE"].astype(str)
+    result = data[data["    DATE"].str.startswith(str(year))].to_dict(orient="records")
+    return result
+
 if __name__ == "__main__":
     web.run(debug=True)
 
